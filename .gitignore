@@ -131,3 +131,5 @@ dist
 
 
 package-lock.json
+sidecar-agent.js
+src/init-agent-script.js

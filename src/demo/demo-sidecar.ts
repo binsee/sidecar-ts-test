@@ -15,7 +15,7 @@ import { targetName } from '../config.js'
 
 const initAgentScript = readFileSync(join(codeRoot, 'src', 'init-agent-script.js'), 'utf-8')
 
-@Sidecar(targetName, initAgentScript, 'DEMO')
+@Sidecar(targetName, initAgentScript, 'demo')
 export class DemoSidecar extends SidecarBody {
   @Call(agentTarget('output'))
   output(text: string): Promise<void> {

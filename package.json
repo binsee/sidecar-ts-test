@@ -16,7 +16,7 @@
     "start": "npm run start:run",
     "start:dev": "npm run build && npm run start:run",
     "start:run": "cross-env BROLOG_LEVEL=info NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node src/demo/main.ts",
-    "dump": "npx sidecar-dump source agent.js > sidecar-agent.js",
+    "dump": "npx sidecar-dump source src/demo/demo-sidecar.ts > sidecar-agent.js",
     "build": "npm run build:namespace",
     "build:base": "frida-compile -t tsconfig-agent.json src/agent/mod.ts -o src/init-agent-script.js",
     "build:namespace": "frida-compile -t tsconfig-agent.json src/agent/mod.ts -o src/init-agent-script.js -s demo",

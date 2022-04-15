@@ -1,6 +1,6 @@
 {
   "name": "sidecar-ts-test",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "type": "module",
   "engines": {
@@ -13,7 +13,7 @@
     "state-switch": "^1.6.3"
   },
   "scripts": {
-    "lint":"echo skip lint...",
+    "lint": "echo skip lint...",
     "start": "npm run start:run",
     "start:dev": "npm run build && npm run start:run",
     "start:run": "cross-env BROLOG_LEVEL=info NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node src/demo/main.ts",

@@ -38,7 +38,7 @@
   "author": "binsee",
   "license": "ISC",
   "devDependencies": {
-    "@chatie/git-scripts": "^0.7.2",
+    "@chatie/git-scripts": "^0.7.7",
     "@chatie/tsconfig": "^4.6.3",
     "@types/node": "^17.0.23",
     "cross-env": "^7.0.3",

@@ -1,7 +1,7 @@
 /*
  * @Author       : binsee
  * @Date         : 2022-04-15 13:45:20
- * @LastEditTime : 2022-04-15 14:57:55
+ * @LastEditTime : 2022-04-15 15:12:13
  * @LastEditors  : binsee
  * @Description  :
  */
@@ -24,6 +24,11 @@ export class DemoSidecar extends SidecarBody {
 
   @Call(agentTarget('getName'))
   getName(): Promise<string> {
+    return Ret()
+  }
+  
+  @Call(agentTarget('error'))
+  error(): Promise<void> {
     return Ret()
   }
 

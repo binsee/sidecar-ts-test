@@ -1,7 +1,7 @@
 /*
  * @Author       : binsee
  * @Date         : 2022-04-15 13:37:19
- * @LastEditTime : 2022-04-15 14:28:13
+ * @LastEditTime : 2022-04-15 15:29:50
  * @LastEditors  : binsee
  * @Description  :
  */
@@ -21,7 +21,12 @@ export const output = (str: string) => {
 }
 
 export const error = () => {
-  throw new Error('test error')
+  try {
+    throw new Error('test error')
+  } catch (error) {
+    const err = error as Error
+    console.log('error():', err.message, err.stack)
+  }
 }
 
 console.log(`Hello ${getName()}!`)

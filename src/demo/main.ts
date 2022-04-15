@@ -10,6 +10,7 @@ async function main() {
   const name = await sidecar.getName()
   console.log('get Name:',name)
   await sidecar.output('hello world')
+  await sidecar.error()
 }
 
 main()

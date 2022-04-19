@@ -14,7 +14,7 @@
     "lint": "echo skip lint...",
     "start": "npm run start:namespace",
     "start:base": "npm run build:base && npm run start:run",
-    "start:namespace": "npm run build:namespace && npm run start:run",
+    "start:namespace": "npm run build:namespace && cross-env NAMESPACE='demo' npm run start:run",
     "start:run": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node src/demo/main.ts",
     "dump": "npx sidecar-dump source src/demo/demo-sidecar.ts > sidecar-agent.js",
     "build": "npm run build:namespace",

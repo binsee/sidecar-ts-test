@@ -1,7 +1,7 @@
 /*
  * @Author       : binsee
  * @Date         : 2022-04-15 13:45:20
- * @LastEditTime : 2022-04-15 15:12:13
+ * @LastEditTime : 2022-04-19 16:50:58
  * @LastEditors  : binsee
  * @Description  :
  */
@@ -15,7 +15,8 @@ import { targetName } from '../config.js'
 
 const initAgentScript = readFileSync(join(codeRoot, 'src', 'init-agent-script.js'), 'utf-8')
 
-@Sidecar(targetName, initAgentScript, 'demo')
+const namespace = process.env['NAMESPACE']
+@Sidecar(targetName, initAgentScript, namespace) 
 export class DemoSidecar extends SidecarBody {
   @Call(agentTarget('output'))
   output(text: string): Promise<void> {

@@ -21,9 +21,10 @@
     "build": "npm run build:namespace",
     "build:base": "frida-compile -t tsconfig-agent.json src/agent/mod.ts -o src/init-agent-script.js",
     "build:namespace": "frida-compile -t tsconfig-agent.json src/agent/mod.ts -o src/init-agent-script.js -s demo",
+    "checkTarget":"./scripts/run-target.sh gping",
     "cli": "npm run cli:namespace",
-    "cli:base": "npm run build:base && frida node -l src/init-agent-script.js",
-    "cli:namespace": "npm run build:namespace && frida node -l src/init-agent-script.js"
+    "cli:base": "npm run checkTarget && npm run build:base && frida gping -l src/init-agent-script.js",
+    "cli:namespace": "npm run checkTarget && npm run build:namespace && frida gping -l src/init-agent-script.js"
   },
   "files": [
     "dist/*",

@@ -1,12 +1,13 @@
 /*
  * @Author       : binsee
  * @Date         : 2022-04-15 13:37:19
- * @LastEditTime : 2022-04-15 15:29:50
+ * @LastEditTime : 2022-04-19 15:25:47
  * @LastEditors  : binsee
  * @Description  :
  */
 
 import { name } from './config'
+/// <reference path="./mod.d.ts" />
 
 export const sayCallback = new NativeCallback(() => {}, 'void', ['int', 'pointer'])
 const sayFunction = new NativeFunction(sayCallback, 'void', ['int', 'pointer'])
@@ -29,4 +30,18 @@ export const error = () => {
   }
 }
 
+console.log('Frida.version:', Frida.version)
+console.log('Script.runtime:', Script.runtime)
 console.log(`Hello ${getName()}!`)
+
+setImmediate(() => {
+  console.log('\n---------------')
+  if (global.demo) {
+    console.log('namespace (global.demo) exist! type:', global.demo,'global:', JSON.stringify(global.demo),'\n')
+    console.log('Sidecar can find `demo.error()` and call it.')
+  } else {
+    console.error('namespace (global.demo) not exist!')
+    console.log('Sidecar can\'t find `error()`')
+  }
+  console.log('---------------\n')
+})

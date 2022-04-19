@@ -1,7 +1,7 @@
 /*
  * @Author       : binsee
  * @Date         : 2022-04-15 13:37:19
- * @LastEditTime : 2022-04-19 15:25:47
+ * @LastEditTime : 2022-04-19 15:44:49
  * @LastEditors  : binsee
  * @Description  :
  */
@@ -22,6 +22,7 @@ export const output = (str: string) => {
 }
 
 export const error = () => {
+  console.log('call error() ...')
   try {
     throw new Error('test error')
   } catch (error) {
@@ -34,14 +35,14 @@ console.log('Frida.version:', Frida.version)
 console.log('Script.runtime:', Script.runtime)
 console.log(`Hello ${getName()}!`)
 
-setImmediate(() => {
+setTimeout(() => {
   console.log('\n---------------')
   if (global.demo) {
-    console.log('namespace (global.demo) exist! type:', global.demo,'global:', JSON.stringify(global.demo),'\n')
+    console.log('namespace (global.demo) exist! type:', typeof global.demo,', global:', JSON.stringify(global.demo),'\n')
     console.log('Sidecar can find `demo.error()` and call it.')
   } else {
     console.error('namespace (global.demo) not exist!')
-    console.log('Sidecar can\'t find `error()`')
+    console.log('Sidecar can\'t find `error()`, because it\'s inside an anonymous function.')
   }
   console.log('---------------\n')
-})
+},1000)

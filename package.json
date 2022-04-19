@@ -7,10 +7,8 @@
     "node": ">= 16"
   },
   "dependencies": {
-    "brolog": "^1.14.2",
     "frida": "^15.1.17",
-    "sidecar": "^1.0.19",
-    "state-switch": "^1.6.3"
+    "sidecar": "^1.0.19"
   },
   "scripts": {
     "lint": "echo skip lint...",

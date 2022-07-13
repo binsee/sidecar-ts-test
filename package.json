@@ -7,8 +7,8 @@
     "node": ">= 16"
   },
   "dependencies": {
-    "frida": "^15.1.17",
-    "sidecar": "^1.0.19"
+    "@binsee/sidecar": "^1.2.0",
+    "frida": "^15.1.17"
   },
   "scripts": {
     "lint": "echo skip lint...",

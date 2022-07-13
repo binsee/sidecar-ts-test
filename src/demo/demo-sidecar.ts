@@ -1,14 +1,14 @@
 /*
  * @Author       : binsee
  * @Date         : 2022-04-15 13:45:20
- * @LastEditTime : 2022-04-19 16:50:58
+ * @LastEditTime : 2022-07-13 19:50:46
  * @LastEditors  : binsee
  * @Description  :
  */
 
 import { readFileSync } from 'fs'
 import { join } from 'path'
-import { agentTarget, Call, Hook, ParamType, Ret, Sidecar, SidecarBody } from 'sidecar'
+import { agentTarget, Call, Hook, ParamType, Ret, Sidecar, SidecarBody } from '@binsee/sidecar'
 
 import { codeRoot } from '../cjs.js'
 import { targetName } from '../config.js'

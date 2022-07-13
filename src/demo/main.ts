@@ -1,4 +1,4 @@
-import { attach } from 'sidecar'
+import { attach } from '@binsee/sidecar'
 import { DemoSidecar } from './demo-sidecar.js'
 
 async function main() {

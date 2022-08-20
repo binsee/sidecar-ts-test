@@ -7,8 +7,9 @@
     "node": ">= 16"
   },
   "dependencies": {
-    "@binsee/sidecar": "^1.2.0",
-    "frida": "^15.1.17"
+    "frida": "^15.1.17",
+    "frida-compile": "^15.1.0",
+    "sidecar": "npm:@binsee/sidecar@^1.2.0"
   },
   "scripts": {
     "lint": "echo skip lint...",
@@ -43,7 +44,7 @@
     "@chatie/tsconfig": "^4.6.3",
     "@types/node": "^17.0.23",
     "cross-env": "^7.0.3",
-    "frida-compile": "^10.2.5",
+    "frida-compile": "^15.1.0",
     "ts-node": "^10.7.0"
   },
   "git": {
